@@ -5,13 +5,16 @@
 #   gem "sqlite3"
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: active_editor
+  host: localhost
+  username: <%= Rails.application.credentials.dig(:db, :dev_user) %>
+  password: <%= Rails.application.credentials.dig(:db, :dev_pass) %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

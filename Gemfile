@@ -51,6 +51,9 @@ gem "bootsnap", require: false
 # An awesome nested set implementation for Active Record
 gem 'awesome_nested_set', '~> 3.6'
 
+# Ruby interface to the PostgreSQL 
+gem 'pg', '~> 1.5', '>= 1.5.4'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
