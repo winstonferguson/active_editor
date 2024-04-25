@@ -1,5 +1,8 @@
 import { Controller } from "@hotwired/stimulus"
-import '@editorjs/editorjs'; 
+import EditorJS from '@editorjs/editorjs'; 
+import Header from '@editorjs/header'; 
+import List from '@editorjs/list'; 
+
 
 export default class extends Controller {
   connect() {
@@ -8,7 +11,17 @@ export default class extends Controller {
       /**
        * Id of Element that should contain Editor instance
        */
-      holder: this.element.id
+      holder: this.element.id,
+      tools: { 
+        header: {
+          class: Header, 
+          inlineToolbar: ['link'] 
+        }, 
+        list: { 
+          class: List, 
+          inlineToolbar: true 
+        } 
+      }, 
     });
   }
 }
