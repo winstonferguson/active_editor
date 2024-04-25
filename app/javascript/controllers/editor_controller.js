@@ -11,6 +11,7 @@ export default class extends Controller {
       /**
        * Id of Element that should contain Editor instance
        */
+      autofocus: true,
       holder: this.element.id,
       tools: { 
         header: {
