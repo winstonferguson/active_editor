@@ -1,0 +1,13 @@
+%h1 Editing post
+
+= render "form", post: @post 
+
+= button_to :add_section, new_section_path, method: :get, form: {data: {turbo_stream: true}}, params: { post_id: @post.id}
+
+#sections
+
+%br
+%div
+  = link_to "Show this post", @post 
+  = link_to "Back to posts", posts_path 
+
