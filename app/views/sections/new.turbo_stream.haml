@@ -1,4 +1,1 @@
-%turbo-stream{action: :append, target: 'sections'}
-  %template
-    %section{id: dom_id(@section, rand(999999)), data: {controller: :editor}}
-    
+= turbo_stream.append "sections", partial: "sections/form"

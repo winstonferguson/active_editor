@@ -1,0 +1,8 @@
+- turbo_id = turbo_id(@section)
+= form_with(model: @section, id: turbo_id, data: {controller: :editor}) do |form|
+  = form.hidden_field :id 
+  = form.hidden_field :parent_id
+  = form.hidden_field :lft
+  = form.hidden_field :rgt
+  = form.hidden_field :blocks
+  %section{id: turbo_id + "_editorjs"}
